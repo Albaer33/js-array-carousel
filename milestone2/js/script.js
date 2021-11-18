@@ -23,15 +23,15 @@ const text = [
 ];
 
 // importo gli oggetti da html
-const imgContainer=document.querySelector('.images-container');
+const imgContainer = document.querySelector('.images-container');
 
 for(let i=0; i<items.length; i++) {
-    const thisImg=items[i];
-    const thisTitle=title[i];
-    const thisText=text[i];
+    const thisImg = items[i];
+    const thisTitle = title[i];
+    const thisText = text[i];
 
     // popolo l'img container
-    const newImg=`
+    const newImg =`
         <div class="single-image">
             <img src="${thisImg}" alt="Img ${i+1}">
             <div class="text">
@@ -42,5 +42,9 @@ for(let i=0; i<items.length; i++) {
     `;
     imgContainer.innerHTML += newImg;
 }
-const textHeadContainer=document.querySelector('.text h3');
-const textParagraphContainer=document.querySelector('.text p');
+// dare active alla prima immagine
+let activeImage = 0;
+const allImages = document.getElementsByClassName('single-image');
+allImages[activeImage].classList.add('active');
+// const textHeadContainer = document.querySelector('.text h3');
+// const textParagraphContainer = document.querySelector('.text p');
