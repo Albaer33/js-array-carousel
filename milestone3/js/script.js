@@ -25,7 +25,7 @@ const text = [
 // importo gli oggetti da html
 const imgContainer = document.querySelector('.images-container');
 
-for(let i=0; i<items.length; i++) {
+for(let i = 0; i < items.length; i++) {
     const thisImg = items[i];
     const thisTitle = title[i];
     const thisText = text[i];
@@ -48,5 +48,35 @@ const allImages = document.getElementsByClassName('single-image');
 const allThumbs = document.getElementsByClassName('single-thumb');
 allImages[activeImage].classList.add('active');
 allThumbs[activeImage].classList.add('active');
-// const textHeadContainer = document.querySelector('.text h3');
-// const textParagraphContainer = document.querySelector('.text p');
+
+const downArrow = document.querySelector('.down');
+downArrow.addEventListener('click', function() {
+        allImages[activeImage].classList.remove('active');
+        allThumbs[activeImage].classList.remove('active');
+
+        if( activeImage < items.length - 1 ) {
+            activeImage++;
+        } else {
+            activeImage = 0;
+        }
+
+        allImages[activeImage].classList.add('active');
+        allThumbs[activeImage].classList.add('active');
+    }
+);
+
+const upArrow = document.querySelector('.up');
+upArrow.addEventListener('click', function() {
+        allImages[activeImage].classList.remove('active');
+        allThumbs[activeImage].classList.remove('active');
+
+        if( activeImage > 0) {
+            activeImage--;
+        } else {
+            activeImage = items.length -1;
+        }
+
+        allImages[activeImage].classList.add('active');
+        allThumbs[activeImage].classList.add('active');
+    }
+);
