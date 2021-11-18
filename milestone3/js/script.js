@@ -24,6 +24,7 @@ const text = [
 
 // importo gli oggetti da html
 const imgContainer = document.querySelector('.images-container');
+const thumbsContainer = document.querySelector('.thumbs-container')
 
 for(let i = 0; i < items.length; i++) {
     const thisImg = items[i];
@@ -40,7 +41,13 @@ for(let i = 0; i < items.length; i++) {
             </div>
         </div>
     `;
+    const newThumb = `
+        <div class="single-thumb">
+            <img src="${thisImg}" alt="">
+        </div>
+    `
     imgContainer.innerHTML += newImg;
+    thumbsContainer.innerHTML += newThumb;
 }
 // dare active alla prima immagine
 let activeImage = 0;
