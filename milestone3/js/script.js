@@ -49,6 +49,7 @@ const allThumbs = document.getElementsByClassName('single-thumb');
 allImages[activeImage].classList.add('active');
 allThumbs[activeImage].classList.add('active');
 
+// scorrere le immagini giù
 const downArrow = document.querySelector('.down');
 downArrow.addEventListener('click', function() {
         allImages[activeImage].classList.remove('active');
@@ -65,6 +66,7 @@ downArrow.addEventListener('click', function() {
     }
 );
 
+// scorrere le immagini su
 const upArrow = document.querySelector('.up');
 upArrow.addEventListener('click', function() {
         allImages[activeImage].classList.remove('active');
