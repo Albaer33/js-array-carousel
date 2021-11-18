@@ -45,6 +45,8 @@ for(let i=0; i<items.length; i++) {
 // dare active alla prima immagine
 let activeImage = 0;
 const allImages = document.getElementsByClassName('single-image');
+const allThumbs = document.getElementsByClassName('single-thumb');
 allImages[activeImage].classList.add('active');
+allThumbs[activeImage].classList.add('active');
 // const textHeadContainer = document.querySelector('.text h3');
 // const textParagraphContainer = document.querySelector('.text p');
